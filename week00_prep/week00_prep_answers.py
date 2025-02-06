@@ -28,7 +28,6 @@ def fibonacci_stop(m):
         lst.append(x0+x1)
         x0=x1
         x1=lst[-1]
-
     return lst
 
 # print(fibonacci_stop(30))
@@ -36,12 +35,14 @@ def fibonacci_stop(m):
 #%% Exercise 5
 
 def corr_pitch(x, status):
-    if not isinstance(x,np.ndarray): x = np.array(x)
+    x = np.asarray(x)
     i = np.argwhere(np.array(status)>0)
     x[i] = -999
     return x
+    
 
 x = [-1, 2, 6, 95]
 status = [1, 0, 0, 0]
 
 print(corr_pitch(x, status))
+
